@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% elif player %}
+    <h2>Player: {{ player.name }}</h2>
+    <p>Tag: {{ player.tag }}</p>
+    <p>Trophies: {{ player.trophies }}</p>
+    <p>Clan: {{ player.clan.name if player.clan else "No Clan" }}</p>
+    <p>Level: {{ player.expLevel }}</p>
+{% endif %}
+{% endblock %}
